@@ -1,0 +1,28 @@
+<html>
+<title>Wallstreet</title>
+{% csrf_token %}
+<body>
+<center><h2>LEADERBOARD</h2></center>
+<table>
+ <tr>
+        <th>Rank</th>
+        <th>Username</th>
+        <th>Net Worth</th>
+        <th>Shares</th>
+        <th>Cash</th>
+    </tr>
+
+{% for r in p %}
+<tr>
+    <br>
+    <th>{{r.rank}}</th>
+    <th>{{r.user.username}}</th>
+    <th>{{r.netWorth}}</th>
+    <th>{{r.noShares}}</th>
+    <th>{{r.cash}}</th>
+    <br>
+</tr>
+{% endfor %}
+    </table>
+</body>
+</html>

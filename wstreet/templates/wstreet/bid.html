@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<form action="" method="post">
+    {% csrf_token %}
+    {%if error_message%}
+        <p>{{error_message}}</p>
+    {%endif%}
+    <select name="company">
+
+            {% for company in Company%}
+                <option>{{company}} </option>
+            {%endfor%}
+
+    </select>
+    <input type="text" placeholder="No. of Shares" name="noShares">
+    <input type="text" placeholder="Price" name="Price">
+    <button type="submit">Buy</button>
+
+
+</form>
+    <br>
+    <p id="company_info">"{{BMW.sharePrice}}"</p>
+
+{% endblock %}
+<a href="{%url 'wstreet:postlogin'%}">Home</a>
+</body>
+<script src="{% static './jquery.min.js' %}"></script>
+<script type="text/javascript" >
+
+    var randomvar = setInterval(setvalue , 3000);
+    var price = "{{BMW.sharePrice}}";
+    function setvalue()
+    {
+        //window.location = "/buy/";
+    }
+
+</script>
+</html>

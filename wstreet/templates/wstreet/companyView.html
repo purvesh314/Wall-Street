@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Buy Bids</h2><br>
+<table>
+    <thead>
+        <th>Profile</th>
+        <th>Bid Price</th>
+        <th>Number of Shares</th>
+    </thead>
+    <tbody>
+        {%for b in Buy%}
+        <tr>
+            <td>{{b.profile}}</td>
+            <td>{{b.bidPrice}}</td>
+            <td>{{b.bidShares}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+
+<h2>Sell Bids</h2><br><br>
+<table>
+    <thead>
+        <th>Profile</th>
+        <th>Sell Price</th>
+        <th>Number of Shares</th>
+    </thead>
+    <tbody>
+       {%for s in Sell%}
+        <tr>
+            <td>{{s.profile}}</td>
+            <td>{{s.sellPrice}}</td>
+            <td>{{s.sellShares}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+
+</body>
+</html>

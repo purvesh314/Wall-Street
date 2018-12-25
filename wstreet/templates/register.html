@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{%block body %}
+    {%if error_message%}
+        <p>{{error_message}}</p>
+    {%endif%}
+    {%if reg_message%}
+        <p>{{reg_message}}</p>
+    {%endif%}
+    <form action="" method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="Username" name="username" /><br>
+        <input type="password" placeholder="Password" name="password"/><br>
+        <input type="text" placeholder="Key" name="key" /><br>
+        <input type="submit" value = "Register" />
+    </form>
+    <a href ="/">Login</a>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<form action="" method="post">
+    {% csrf_token %}
+    {%if error_message%}
+        <p>{{error_message}}</p>
+    {%endif%}
+    <select name="company">
+
+            {% for c in Company%}
+                <option>{{c.company}} </option>
+            {%endfor%}
+
+    </select>
+    <input type="text" placeholder="No. of Shares" name="noShares">
+    <input type="text" placeholder="Price" name="Price">
+    <button type="submit">Sell</button>
+</form>
+{% endblock %}
+<a href="{%url 'wstreet:postlogin'%}">Home</a>
+</body>
+</html>
